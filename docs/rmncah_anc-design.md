@@ -331,7 +331,7 @@ It includes **five** basic sections.
 
 ## Android compatibility
 
-ANC DAK data packages are optimised for Android data collection with the DHIS2 Capture App, free to download on the[Google Play store](https://play.google.com/store/apps/details?id=com.dhis2&hl=en) or at [Github](https://github.com/dhis2/dhis2-android-capture-app/releases).
+ANC DAK data packages are optimised for Android data collection with the DHIS2 Capture App, free to download on the [Google Play store](https://play.google.com/store/apps/details?id=com.dhis2&hl=en) or at [Github](https://github.com/dhis2/dhis2-android-capture-app/releases).
 
 See also the [Android Web Settings App](https://docs.dhis2.org/en/use/android-app/settings-configuration.html) for tailoring configuration of the DHIS2 Capture App on Android, including setting important synchronization parameters such as maximum number of TEI to download onto each device.
 
