@@ -74,9 +74,7 @@ In the patient flow recommended by the ANC DAK, clients seen at the clinic shoul
 
 ![Figure 1 ANC registration flow chart of a client while registering in the ANC DAK system](resources/images/image2.png "ANC DAK registration workflow"){.center width=90% }
 
-
 In this metadata package the name of the ANC tracker program is ‘Antenatal Care Registry (ANC)’ with a Tracked Entity Type ‘Person’. Currently the program is configured to search with a minimum one attribute before registering a pregnant woman.
-
 
 ### Registration and Enrollment details
 
@@ -86,7 +84,6 @@ The date of Registration is configured to show as ‘Enrolled’. Based on typic
 
 ![Figure 3 Age validation error](resources/images/image3.png "Age is in error"){.center width=50% }
 
-
 #### Quick Check
 
 After completing the enrollment details, the 'Quick Check’ program stage auto-generates, with details related to assessment for confirmation of pregnancy and danger signs. The danger signs are assessed and if there are any danger signs the program suggests to refer to hospital immediately. If there are no danger signs the clinical staff can proceed to the next program stages and relevant program sections.
@@ -95,21 +92,15 @@ Since the Quick Check stage must be performed for every visit, program indicator
 
 ![Figure 4 Quick Check stage](resources/images/image5.png "Quick check stage"){.center width=50% }
 
-
 In alignment with the ANC DAK L4 (Reference Configuration), the Quick Check stage needs to be performed at the start of every visit to assess for danger signs so that the woman can be referred to a hospital at the earliest. Such a setup works best when data entry is done concurrently with care.
 
 ![Figure 5 ANC Referral after when danger signs present](resources/images/image7.png "Referral"){.center width=70% }
-
 
 To support this use case, only the Quick Check, Laboratory, and Closure stages are first shown to data entry users by default. Once the Quick Check is performed and with **No Danger Signs** present, a program rule auto assigns the current date into the  “Date of Quick Check” data element, and the other stages (Profile and History, Symptoms, Physical Exam, Counselling) are then shown.
 
 > **Warning**
 >
 >**If the date of latest Quick Check is not the CURRENT date, then end users cannot open new events for the other clinical stages.**
-
-
-
-
 
 ### Repeatable ANC Visit Stages and Lab Tests
 
@@ -124,7 +115,6 @@ The Laboratory Stage is repeatable, and could be entered by another user who is 
 While customising the configuration for a specific use case these can be selected or modified as per the local guidelines. As recommended by ANC DAK, a typical ANC flow is shown in Figure 7 for quick check and counselling, management and treatment stage.
 
 ![Figure 6 ANC contact flow chart for ANC assessment involving counselling, management, and treatment program stage in WHO-ANC DAK](resources/images/image6.png "ANC DAK contact flow"){.center }
-
 
 ### Close ANC Record
 
@@ -141,7 +131,6 @@ As noted in the dashboard section below, most of the routine monitoring indicato
 > **Tip**
 >
 > Dedicated staff should routinely follow up with patients who have not been seen at the facility in some time, in order to close the file promptly. The follow up process might include calling phone numbers from a working list of patients without a visit in the past 6 weeks, or calling women who have passed week 42 of pregnancy.
-
 
 ## ANC Registry Enrollment and Program Stages Details
 
@@ -177,17 +166,18 @@ The TEI Attributes starting with "cohabitants" are Yes-Only checkboxes, mimicing
 ### Program Stage details
 
 The _Antenatal Care Registry_ program has 7 program stages. Each of these stages contain program sections depending on the ANC visit and the stage of the pregnancy. Quick Check is mandatory for every ANC visit to check for danger signs. Woman’s Profile and History, Close ANC Records are non-repeatable stages. The other stages can be used according to the services offered by the clinical staff.
-|  **Stage number**  | **Program Stage**                                                    | **Program Sections**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-|---|-------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1 | _Quick Check<br>(Repeatable every visit)_                               | _Must show "No Danger Signs" at the beginning of every ANC counter to display other stages._ Includes: <br> Confirmation of the pregnancy<br>Reasons for coming to facility<br>Specific health concerns<br>Danger signs<br>Visit Date                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| 2 | _Woman's Profile and History<br>(**Non-repeatable**)_                   | This is a non-repeatable stage that captures the information related to a woman's social, medical and pregnancy and immunization related history.<br>Following program sections are present:<br><br>Education<br>Occupation<br>Gestational age<br>Previous pregnancies<br>Past pregnancy complications<br>Past pregnancy complications<br>Substance use during past pregnancy<br>Allergies<br>Past surgeries<br>Existing chronic health conditions<br>Immunisation history<br>Current medications<br>Daily caffeine intake<br>Current alcohol and/or other substance use<br>Partner HIV status (reported)                                                                                    |
-| 3 | _Symptoms and Follow-up<br>(Repeatable)_                                | This a repeatable stage that is performed at every visit to capture details related to medications, persistent behaviours, physiological symptoms and IPV<br>Following program sections are present:<br>Medication follow-up<br>Persistent behaviours<br>Persistent physiological symptoms<br>Current physiological symptoms<br>Intimate partner violence<br>Foetal movement                                                                                                                                                                                                                                                                                                                 |
-| 4 | _Physical Examinations<br>(Repeatable)_                                 | This is a repeatable stage with sections related to physical examinations. This stage provides opportunities to configure decision support logics for most common measurements and symptoms. Blood pressure section has a working decision support logic ( see Decision support logic below)<br>Following program sections are present:<br><br>Height and Weight<br>Blood pressure<br>Symptoms of severe pre-eclampsia<br>Temperature, Pulse, and Pallor<br>Respiratory exam result<br>Cardiac exam result<br>Breast exam result<br>Abdominal exam result<br>Pelvic exam result<br>Cervical exam result<br>Oedema<br>Fetal assessment<br>Presenting signs/conditions for IPV<br>Types of IPV |
-| 5 | _Laboratory Tests and Imaging<br>(Repeatable)_                          | This is a repeatable stage that is used once at first ANC visit and later as and when required.<br>Following program sections are present:<br><br>Ultrasound scan<br>Blood type and Rh<br>HIV test<br>Hepatitis B virus test and result<br>Hepatitis C test and result<br>Syphilis test and result<br>Urine tests<br>Urine test type<br>Midstream urine culture result<br>Results of other urine tests<br>Blood glucose tests<br>Blood Haemoglobin<br>TB screening<br>Reason TB screening not done<br>Other tests                                                                                                                                                                            |
-| 6 | _Counselling and Treatment<br>(Repeatable)_                             | This is a repeatable stage related to counselling  related to risks, immunization, IPV and malaria prevention treatment.<br>This stage has 14 program sections and many data elements. <br>Following program sections are present:<br><br>Behavioural counselling<br>Diagnoses<br>Risks of high-risk conditions and counselling<br>HIV: Risk, Counselling and prevention<br>Danger signs<br>Counselling on ANC contacts and Birth Plan<br>TT immunization<br>Hep B immunization<br>Flu immunization<br>IPV<br>IPV- Safety assessment<br>IPV- Referrals made as part of first-line support and care<br>Preventive treatment<br>Malaria prevention and treatment                               |
-| 7 | _Close ANC Record<br>(**Non-repeatable**, once at closing ANC records)_ | This is a non-repeatable section that is done when closing the ANC records.<br>Following program sections are present:<br><br>Reason for closing ANC record<br>Delivery related information<br>Breast Feeding<br>Delivery complications<br>Miscarriage, Abortion or Maternal Death                                                                                                                                                                                                                                                                                                                                                                                                           |
-Table 2 ANC Registry Program Stages
 
+| **Stage number** | **Program Stage** | **Program Sections** |
+|-|-|-|
+| 1 | _Quick Check_ <br> _(Repeatable every visit)_  | _Must show "No Danger Signs" at the beginning of every ANC counter to display other stages._ Includes: <br> Confirmation of the pregnancy <br> Reasons for coming to facility <br> Specific health concerns <br> Danger signs <br> Visit Date |
+| 2 | _Woman's Profile and History_ <br> _**(Non-repeatable)**_ | This is a non-repeatable stage that captures the information related to a woman's social, medical and pregnancy and immunization related history. <br> Following program sections are present: <br> Education <br> Occupation <br> Gestational age <br> Previous pregnancies <br> Past pregnancy complications <br> Past pregnancy complications <br> Substance use during past pregnancy <br> Allergies <br> Past surgeries <br> Existing chronic health conditions <br> Immunisation histor <br> Current medications <br> Daily caffeine intake <br> Current alcohol and/or other substance use <br> Partner HIV status (reported) |
+| 3 | _Symptoms and Follow-up_ <br> _(Repeatable)_ | This a repeatable stage that is performed at every visit to capture details related to medications, persistent behaviours, physiological symptoms and IPV <br> Following program sections are present: <br> Medication follow-up <br> Persistent behaviours <br> Persistent physiological symptoms <br> Current physiological symptoms <br> Intimate partner violence <br> Foetal movement |
+| 4 | _Physical Examinations_<br> _(Repeatable)_ | This is a repeatable stage with sections related to physical examinations. This stage provides opportunities to configure decision support logics for most common measurements and symptoms. Blood pressure section has a working decision support logic (see Decision support logic below) <br> Following program sections are present: <br> Height and Weight <br> Blood pressure <br> Symptoms of severe pre-eclampsia <br> Temperature, Pulse, and Pallor <br> Respiratory exam result <br> Cardiac exam result <br> Breast exam result <br> Abdominal exam result <br> Pelvic exam result <br> Cervical exam result <br> Oedema <br> Fetal assessment <br> Presenting signs/conditions for IPV <br> Types of IPV |
+| 5 | _Laboratory Tests and Imaging_ <br> _(Repeatable)_ | This is a repeatable stage that is used once at first ANC visit and later as and when required. <br> Following program sections are present: <br> Ultrasound scan <br> Blood type and Rh <br> HIV test <br> Hepatitis B virus test and result <br> Hepatitis C test and result <br> Syphilis test and result <br> Urine tests <br> Urine test type <br> Midstream urine culture result <br> Results of other urine tests <br> Blood glucose tests <br> Blood Haemoglobin <br> TB screening <br> Reason TB screening not done <br> Other tests |
+| 6 | _Counselling and Treatment_ <br> _(Repeatable)_ | This is a repeatable stage related to counselling  related to risks, immunization, IPV and malaria prevention treatment. <br> This stage has 14 program sections and many data elements. <br> Following program sections are present: <br> Behavioural counselling <br> Diagnoses <br> Risks of high-risk conditions and counselling <br> HIV: Risk, Counselling and prevention <br> Danger signs <br> Counselling on ANC contacts and Birth Plan <br> TT immunization <br> Hep B immunization <br> Flu immunization <br> IPV <br> IPV- Safety assessment <br> IPV- Referrals made as part of first-line support and care <br> Preventive treatment <br >Malaria prevention and treatment |
+| 7 | _Close ANC Record_ <br> _**(Non-repeatable, once at closing ANC records)**_ | This is a non-repeatable section that is done when closing the ANC records. <br> Following program sections are present: <br> Reason for closing ANC record <br> Delivery related information <br> Breast Feeding <br> Delivery complications <br> Miscarriage, Abortion or Maternal Death |
+
+Table 2 ANC Registry Program Stages
 
 ### Program Stages on Android and Web
 
@@ -195,11 +185,9 @@ The stages and sections present slightly different depending on whether Android 
 
 ![Figure 8 ANC DAK Program stages in a browser](resources/images/image9.png "Registry in Web Browser"){.center width=80% }
 
-
 | Program stages on Android            |  Physical exam stage sections on Android |
 |:-------------------------:|:-------------------------:|
 | ![Fig 9](resources/images/image10.png) | ![Fig 10](resources/images/image11.png) |
-
 
 ### Decision Support Logic example
 
@@ -215,17 +203,13 @@ Please refer to the “ANC.DT.17–24 Diagnosis & treat” worksheet in [Web ann
 
 Often, multiple tables of decision support need to be evaluated to develop a cascade of related actions. For example, diagnosis for hypertension depends on a high **repeat** blood pressure measurement, which is only shown to the user after the first high measurement.
 
-
 ![Table 5 Decision rule details for blood pressure](resources/images/image15.png "Decision support for repeat BP"){.center }
 
-
 The following is an example for the decision rule for blood pressure under the Physical examination program stage.  It follows the ANC DAK trigger for a second blood pressure measurement, and then a treatment for severe hypertension, both shown above.
-
 
 1. When a systolic blood pressure input is more than 140 mmHg and diastolic blood pressure input more than 90 mmHg, the program activates a pop-up Warning Box with an action to ‘Measure BP again after 10-15 minutes rest’.
 2. After taking the repeat blood pressure, additional boxes for “Diagnosis” and “Treatment Note” are shown.  The decision logic is be configured using program rules to show  ‘Severe Hypertension’ as the Diagnosis,  with a instructions on how to treat this diagnosis autofilled as an annotation in the ‘Treatment Note’ data element.
 3. After reading the treatment note, the provider confirms they have read the note and provided treatment as needed, by clicking the Yes Only data element beneath the 'Treatment Note'. This flexibility allows for the care provider's discretion on how to actually administer treatment, but ensures their recognition of the decision support guidance.
-
 
 ![Figure 11 Decision logic inputs, output, action and annotations for blood pressure](resources/images/image16.png "Program rules for repeat blood pressure"){.center width=80% }
 
@@ -235,21 +219,18 @@ To support data quality, the ANC Registry program uses many program rules to ass
 
 Few examples of program rules are shown below.
 
-1. Program rule to check for cervical dilation with an acceptable range 0 cm -10cm. If the range is out of this there will be an error message _”Out of range. Acceptable range: 0 cm-10 cm”_
-
-![Cervical dilation](resources/images/image17.png "cervical dilation error")
-
+1. Program rule to check for cervical dilation with an acceptable range 0 cm -10cm. If the range is out of this there will be an error message _”Out of range. Acceptable range: 0 cm-10 cm”_ 
+  
+  ![Cervical dilation](resources/images/image17.png "cervical dilation error")
 2. Program rule to check for LMP date based on visit date, which should  not be less than 2 weeks and not more than 40 weeks.
-
-![LMP warning](resources/images/image18.png "LMP date warning")
-
+  
+  ![LMP warning](resources/images/image18.png "LMP date warning")
 3. Program rules to check for a woman’s previous pregnancies related to gravida, para, live births and abortions. The rule will show an error if the number of live birth is more than previous pregnancies minus number of miscarriages/abortions. There is also a similar rule to check for the number of stillbirths.
 
-![Live births error](resources/images/image19.png "Live births error")
-
+  ![Live births error](resources/images/image19.png "Live births error")
 4. Program rules for BMI calculation and weight category take mandatory inputs from Height and Weight to calculate BMI value and then classify as underweight, normal, overweight and obese categories.
 
-![BMI autocalculation](resources/images/image20.png "BMI calculation")
+  ![BMI autocalculation](resources/images/image20.png "BMI calculation")
 
 ## User groups
 
