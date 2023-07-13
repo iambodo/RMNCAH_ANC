@@ -6,15 +6,15 @@
 
 ## Design
 
-- [Version 1.0.0](#rmncah-anc-design)
+- [Version 1.0.0](#antenatal-care-anc-tracker)
 
 ## Installation
 
-- [Installation Guide](#rmncah-anc-installation)
+- [Installation Guide](#anc-trk-installation)
 
 ## Metadata Reference
 
-- [Version 1.0.0](https://packages.dhis2.org/en/RMNCAH_ANC/1.0.0/DHIS2.37/RMNCAH_AGG_COMPLETE_1.0.0_DHIS2.37.xlsx)
+- [Version 1.0.0](https://packages.dhis2.org/en/RMNCAH_ANC/1.0.0/DHIS2.37/RMNCAH_ANC_1.0.0_DHIS2.37.zip)
 
 ## Relevant Links
 
